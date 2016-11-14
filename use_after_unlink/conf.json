@@ -1,0 +1,15 @@
+{
+"flag_dir":"/ctfs/unlinkMe/use_after_unlink/flag",
+"flag_pre":"FLAG_USE_AFTER_UNLINK_IF_YOU_C@N_",
+"execs":[
+    {"cmd" : " chown {0[0]}:{0[1]} /src/{0[2]}/", "num_args" : 3, "args" : ["__GUEST__", "__GUEST__", "__DIR__"], "options" : ""},
+    {"cmd" : " chmod {0[0]} /src/{0[1]}", "num_args" : 2, "args" : ["755", "__DIR__"], "options" : ""},
+    {"cmd" : " chown {0[0]}:{0[1]} /src/{0[2]}/use_after_unlink", "num_args" : 3, "args" : ["__FLAG__", "__GUEST__", "__DIR__"], "options" : ""},
+    {"cmd" : " chmod {0[0]} /src/{0[1]}/use_after_unlink", "num_args" : 2, "args" : ["4550", "__DIR__"], "options" : ""},
+    {"cmd" : " chattr +i /src/{0[0]}/use_after_unlink", "num_args" : 1, "args" : ["__DIR__"], "options" : "--privileged "},
+    {"cmd" : " chown {0[0]}:{0[1]} /src/{0[2]}/flag", "num_args" : 3, "args" : ["__FLAG__", "__FLAG__", "__DIR__"], "options" : ""},
+    {"cmd" : " chmod {0[0]} /src/{0[1]}/flag", "num_args" : 2, "args" : ["400", "__DIR__"], "options" : ""},
+    {"cmd" : " chattr +i /src/{0[0]}/flag", "num_args" : 1, "args" : ["__DIR__"], "options" : "--privileged "}
+    {"cmd" : " sh -c 'echo {0[0]} > /proc/sys/kernel/randomize_va_space'",  "num_args" : 1, "args" : ["0"], "options" : "--privileged "}
+]
+}
